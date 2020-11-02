@@ -10,15 +10,17 @@ app.use(express.static('client'))
 io.sockets.on('connection', function(socket) {
   // convenience function to log server messages on the client
   function log() {
+    console.log('Log: ', arguments)
     var array = ['Message from server:'];
     array.push.apply(array, arguments);
     socket.emit('log', array);
   }
 
-  socket.on('message', function(message) {
-    log('Client said: ', message);
+  socket.on('message', function(data) {
+    log('Client said: ', data);
     // for a real app, would be room-only (not broadcast)
-    socket.broadcast.emit('message', message);
+    // socket.broadcast.emit('message', message);
+    socket.in(data.room).emit('message', data.message);
   });
 
   socket.on('create or join', function(room) {
