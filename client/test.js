@@ -93,10 +93,13 @@ socket.on('message', function(message) {
 var localVideo = document.querySelector('#localVideo');
 var remoteVideo = document.querySelector('#remoteVideo');
 
-navigator.mediaDevices.getUserMedia({
-  audio: false,
-  video: true
-})
+
+var constraints = {
+  video: true,
+  audio: true
+};
+
+navigator.mediaDevices.getUserMedia(constraints)
 .then(gotStream)
 .catch(function(e) {
   alert('getUserMedia() error: ' + e.name);
@@ -111,11 +114,6 @@ function gotStream(stream) {
     maybeStart();
   }
 }
-
-var constraints = {
-  video: true,
-  audio: true
-};
 
 console.log('Getting user media with constraints', constraints);
 
