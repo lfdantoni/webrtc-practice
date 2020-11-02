@@ -6,7 +6,6 @@ const http = require('http').createServer(app);
 const io = require('socket.io')(http);
 
 app.use(express.static('client'))
-app.use(express.static('node_modules'))
 
 io.sockets.on('connection', function(socket) {
   // convenience function to log server messages on the client
