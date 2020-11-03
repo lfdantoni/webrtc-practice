@@ -10,9 +10,28 @@ var turnReady;
 
 var pcConfig = {
   'iceServers': [{
-    'urls': 'stun:stun.l.google.com:19302'
-  },
-  {"url": "turn:ec2-54-176-1-181.us-west-1.compute.amazonaws.com:3478", "username":"tadhackuser", "credential":"tadhackpw"}]
+    'urls': [
+      'stun.l.google.com:19302',
+      'stun1.l.google.com:19302',
+      'stun2.l.google.com:19302',
+      'stun3.l.google.com:19302',
+      'stun4.l.google.com:19302',
+      'stun01.sipphone.com',
+      'stun.ekiga.net',
+      'stun.fwdnet.net',
+      'stun.ideasip.com',
+      'stun.iptel.org',
+      'stun.rixtelecom.se',
+      'stun.schlund.de',
+      'stunserver.org',
+      'stun.softjoys.com',
+      'stun.voiparound.com',
+      'stun.voipbuster.com',
+      'stun.voipstunt.com',
+      'stun.voxgratia.org',
+      'stun.xten.com',
+    ]
+  }]
 };
 
 // Set up audio and video regardless of what devices are present.
