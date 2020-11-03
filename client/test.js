@@ -11,7 +11,8 @@ var turnReady;
 var pcConfig = {
   'iceServers': [{
     'urls': 'stun:stun.l.google.com:19302'
-  }]
+  },
+  {"url": "turn:ec2-54-176-1-181.us-west-1.compute.amazonaws.com:3478", "username":"tadhackuser", "credential":"tadhackpw"}]
 };
 
 // Set up audio and video regardless of what devices are present.
