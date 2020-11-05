@@ -46,6 +46,10 @@ io.sockets.on('connection', function(socket) {
     }
   });
 
+  socket.on('join', function(room) {
+    socket.join(room);
+  })
+
 
   socket.on('ipaddr', function() {
     var ifaces = os.networkInterfaces();
